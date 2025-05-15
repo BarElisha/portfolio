@@ -1,14 +1,14 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <title>Bar Elisha's AI Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     body {
       font-family: 'Roboto', sans-serif;
-      background-color: #ffffff;
-      color: #1a1a1a;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #f0f0f0;
       margin: 0;
       padding: 2em;
       box-sizing: border-box;
@@ -17,79 +17,118 @@
       text-align: center;
     }
     h1 {
-      color: #00b8a9;
+      color: #00ffc3;
       font-size: 3em;
     }
     h2 {
-      font-size: 2.5em;
-      color: #00b8a9;
+      font-size: 2em;
+      color: #ffffff;
       margin-top: 3em;
     }
     h3 {
-      font-size: 1.6em;
-      color: #ff8800;
+      font-size: 1.8em;
+      color: #ffffff;
       margin-top: 0.5em;
     }
     p.description {
       text-align: center;
       font-size: 1.2em;
       margin-bottom: 3em;
-      color: #555;
+      color: #ddd;
     }
     .project-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2em;
       justify-items: center;
     }
     .project {
-      background-color: #f2f2f2;
-      border: 1px solid #ddd;
-      border-left: 4px solid #00b8a9;
+      background-color: #1e293b;
+      border: 1px solid #334155;
+      border-left: 4px solid #00ffc3;
       padding: 1.5em;
       border-radius: 10px;
       transition: transform 0.2s ease;
+      min-height: 280px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
     .project:hover {
       transform: scale(1.03);
     }
     .project h2 {
       margin-top: 0;
-      color: #ff8800;
+      color: #f59e0b;
       font-size: 1.4em;
     }
     .project p {
       font-size: 0.95em;
+      color: #e2e8f0;
     }
-    .project a, .notify-button {
+    .btn-download {
+      background-color: #10b981;
+    }
+    .btn-dashboard {
+      background-color: #3b82f6;
+    }
+    .btn-notify {
+    width: 100%;
+    display: inline-block;
+    background-color: #f59e0b; /* orange */
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+    }
+    .btn-notify:hover {
+    background-color: #d97706;
+    }
+
+    .project a, .project button {
       display: inline-block;
-      margin-top: 0.8em;
-      padding: 8px 16px;
-      background-color: #00b8a9;
-      color: white;
+      margin-top: 1em;
+      padding: 10px 18px;
       font-size: 1em;
+      font-weight: bold;
+      text-align: center;
       text-decoration: none;
       border: none;
       border-radius: 6px;
+      color: white;
       cursor: pointer;
       transition: background-color 0.2s ease;
+      width: 100%;
     }
-    .project a:hover, .notify-button:hover {
-      background-color: #009e94;
+    .project a:hover, .project button:hover {
+      opacity: 0.9;
     }
-    .coming-soon-wrapper {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 4em;
-      margin-top: 1em;
-    }
-    .category-block {
-      flex: 1 1 600px;
-      max-width: 700px;
-    }
-    .popup-overlay {
+  </style>
+    <style>
+  #scrollTopBtn {
+    position: fixed;
+    bottom: 100px;
+    left: 40px;
+    background-color: #00b8a9;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+  }
+  #scrollTopBtn:hover {
+    background-color: #009e94;
+  }
+.popup-overlay {
       position: fixed;
       top: 0;
       left: 0;
@@ -141,148 +180,94 @@
       background-color: #009e94;
     }
   </style>
-  <style>
-  #scrollTopBtn {
-    position: fixed;
-    bottom: 100px;
-    left: 40px;
-    background-color: #00b8a9;
-    color: white;
-    border: none;
-    padding: 10px 16px;
-    border-radius: 6px;
-    font-size: 1em;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    transition: background-color 0.3s ease;
-  }
-  #scrollTopBtn:hover {
-    background-color: #009e94;
-  }
-</style>
 </head>
 <body>
-  <h1>🤖 Bar Elisha's AI Playground</h1>
+  <h1>Bar Elisha's AI Playground</h1>
   <p class="description">Exploring the future of technology through code, data, and smart robots 🤖🚀</p>
+
   <div class="project-grid">
     <div class="project">
-      <h2>📄 HRise – HR Management System</h2>
+      <h2>HRise – HR Management System 📄</h2>
       <p>A complete Flask-based system for managing employees, forms, and file uploads.</p>
-      <a href="readmes/hrise-summary.md" download>📥 Download Summary</a>
+      <a href="readmes/hrise-summary.md" class="btn-download" download>📥 Download Summary</a>
     </div>
     <div class="project">
-      <h2>🎥 Ballgorithm – Football Video Analysis</h2>
+      <h2>Ballgorithm – Football Video Analysis 🎥</h2>
       <p>Modular MVP for processing football videos and generating reports using AI logic.</p>
-      <a href="readmes/ballgorithm-summary.md" download>📥 Download Summary</a>
+      <a href="readmes/Ballgorithm summary.md" class="btn-download" download>📥 Download Summary</a>    </div>
+    <div class="project">
+      <h2>AI StockBot 📊</h2>
+      <p>A Python script that connects to stock APIs and analyzes portfolios in real time.</p>
+      <a href="readmes/ai-stockbot-summary.md" class="btn-download" download>📥 Download Summary</a>
     </div>
     <div class="project">
-<h2>📊 AI StockBot</h2>
-<p>A Python script that connects to stock APIs and analyzes portfolios in real time.</p>
-<a download="" href="readmes/ai-stockbot-summary.md">📥 Download Summary</a>
-</div>
-<div class="project">
-<h2>🚀 Funny Dashboard</h2>
-<p>Data visualization dashboard embedded from Tableau with playful visual themes.</p>
-<a href="https://public.tableau.com/app/profile/bar.elisha/vizzes" target="_blank">View All Dashboards</a>
-</div>
-  </div>
-  <h2>🔮 What’s Brewing: AI Projects in Progress</h2>
-  <div class="coming-soon-wrapper">
-    <div class="category-block">
-      <h3>⚽ Smarter Sports</h3>
-      <div class="project-grid">
-        <div class="project">
-          <h2>📸 Auto-Scout Vision</h2>
-          <p>Transforms raw match footage into structured awareness by detecting key player movements and visual anomalies in real time.</p>
-          <button onclick="openPopup()" class="notify-button">Notify Me 🔔</button>
-        </div>
-        <div class="project">
-          <h2>🧠 TacticalGPT</h2>
-          <p>Assists coaching staff in shaping smarter decisions through language-aware briefings adapted to evolving match contexts.</p>
-          <button onclick="openPopup()" class="notify-button">Notify Me 🔔</button>
-        </div>
-        <div class="project">
-          <h2>🔎 ScoutRAG</h2>
-          <p>Combines past scouting insights and fresh observations to recommend prospects with precision, even in data-scarce environments.</p>
-          <button onclick="openPopup()" class="notify-button">Notify Me 🔔</button>
-        </div>
-        <div class="project">
-          <h2>🤖 TeamAgent</h2>
-          <p>Observes trends across matches, identifies silent inefficiencies, and proposes actionable routines to optimize collective performance.</p>
-          <button onclick="openPopup()" class="notify-button">Notify Me 🔔</button>
-        </div>
-      </div>
-    </div>
-    <div class="category-block">
-      <h3>📦 Business Automation</h3>
-      <div class="project-grid">
-        <div class="project">
-          <h2>🎁 PromoAgent</h2>
-          <p>Automatically sends discount codes to new members of loyalty clubs via email or SMS with CRM integration.</p>
-          <button onclick="openPopup()" class="notify-button">Notify Me 🔔</button>
-        </div>
-        <div class="project">
-          <h2>📊 ReportGenie</h2>
-          <p>Generates weekly business performance reports using spreadsheet or API data.</p>
-          <button onclick="openPopup()" class="notify-button">Notify Me 🔔</button>
-        </div>
-                <div class="project">
-          <h2>📦 OrderFlowBot</h2>
-          <p>Monitors incoming e-commerce orders, sends confirmations, updates inventory, and dispatches logistics instructions.</p>
-          <button onclick="openPopup()" class="notify-button">Notify Me 🔔</button>
-        </div>
-        <div class="project">
-          <h2>📇 ClientTagger</h2>
-          <p>Classifies new client leads based on text, behavior, and business value to support smarter engagement flows.</p>
-          <button onclick="openPopup()" class="notify-button">Notify Me 🔔</button>
-        </div>
-      </div>
+      <h2>Funny Dashboard 🚀</h2>
+      <p>Data visualization dashboard embedded from Tableau with playful visual themes.</p>
+      <a href="https://public.tableau.com/app/profile/bar.elisha/vizzes" target="_blank" class="btn-dashboard">📊 View All Dashboards</a>
     </div>
   </div>
-  <div id="popup-overlay" class="popup-overlay">
-    <div class="popup-box">
-      <h3>🔔 Get Notified</h3>
-      <label for="popup-name">Full Name</label>
-      <input type="text" id="popup-name" placeholder="Enter your name">
-      <label for="popup-email">Email Address</label>
-      <input type="email" id="popup-email" placeholder="Enter your email">
-      <button onclick="submitForm()">Notify Me</button>
-      <button onclick="closePopup()" style="margin-top:10px;background-color:#ccc;color:#333;">Cancel</button>
+  <h2>🧪 Projects in Progress</h2>
+  <div class="project-grid">
+    <div class="project">
+      <h2>Auto-Scout Vision 📸</h2>
+      <p>Analyzes match footage in real time and detects key player movements.</p>
+      <button onclick="openPopup()" class="btn-notify">🔔 Notify Me</button>
     </div>
-  </div>
-    <h2>🧰 Core Skills</h2>
-  <p class="description" style="max-width: 900px; margin: auto;">
-    Python · Flask · SQL · HTML/CSS/JS · Data Analysis · Tableau · Oracle HCM · AI Prompt Engineering · LLM Integration · API Automation · Project Management · User Experience · System Design · Git/GitHub
-  </p>
-
-  <script>
-    function openPopup() {
-      document.getElementById('popup-overlay').style.display = 'flex';
-      document.body.style.overflow = 'hidden';
-    }
-    function closePopup() {
-      document.getElementById('popup-overlay').style.display = 'none';
-      document.body.style.overflow = '';
-    }
-    function submitForm() {
-      const name = document.getElementById('popup-name').value;
-      const email = document.getElementById('popup-email').value;
-      if (!name || !email) {
-        alert("Please enter both name and email");
-        return;
-      }
-      alert("Thanks " + name + "! We'll notify you at " + email);
-      closePopup();
-    }
-  </script>
-  <!-- Scroll to Top Button -->
-<button id="scrollTopBtn" onclick="scrollToTop()" style="display:none;">⬆ Back to Top</button>
-<!-- LinkedIn Icon -->
+    <div class="project">
+      <h2>TacticalGPT 🧠</h2>
+      <p>AI that generates tactical briefings for coaching staff.</p>
+      <button onclick="openPopup()" class="btn-notify">🔔 Notify Me</button>
+    </div>
+    <div class="project">
+      <h2>ScoutRAG 🔎</h2>
+      <p>Matches historical scouting data with real-time insights.</p>
+      <button onclick="openPopup()" class="btn-notify">🔔 Notify Me</button>
+    </div>
+    <div class="project">
+      <h2>TeamAgent 🤖</h2>
+      <p>Detects inefficiencies and recommends actionable routines.</p>
+      <button onclick="openPopup()" class="btn-notify">🔔 Notify Me</button>
+    </div>
+    <div class="project">
+      <h2>ReportGenie 📊</h2>
+      <p>Generates weekly business performance reports using spreadsheet or API data.</p>
+      <button onclick="openPopup()" class="btn-notify">🔔 Notify Me</button>
+    </div>
+        <div class="project">
+      <h2>PromoAgent 🎁</h2>
+        <p>Automatically sends discount codes to new members of loyalty clubs via email or SMS with CRM integration.</p>
+      <button onclick="openPopup()" class="btn-notify">🔔 Notify Me</button>
+    </div>
+        <div class="project">
+      <h2>OrderFlowBot 📦</h2>
+      <p>Monitors incoming e-commerce orders, sends confirmations, updates inventory, and dispatches logistics instructions.</p>
+      <button onclick="openPopup()" class="btn-notify">🔔 Notify Me</button>
+    </div>
+        <div class="project">
+      <h2>ClientTagger 📇</h2>
+      <p>Classifies new client leads based on text, behavior, and business value to support smarter engagement flows.</p>
+      <button onclick="openPopup()" class="btn-notify">🔔 Notify Me</button>
+    </div>
 <a href="https://www.linkedin.com/in/barelisha/" style="position: fixed; bottom: 40px; left: 40px; z-index: 1000;" target="_blank">
 <img alt="LinkedIn" height="40" src="https://cdn-icons-png.flaticon.com/512/174/174857.png" style="border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.2);" width="40"/>
 </a>
+</div>
+    <h3>🧰 Core Skills</h3>
+      <p class="description" style="max-width: 900px; margin: auto;">
+    Python · Flask · SQL · HTML/CSS/JS · Data Analysis · Tableau · Oracle HCM · AI Prompt Engineering · LLM Integration · API Automation · Project Management · User Experience · System Design · Git/GitHub
+      </p>
+<div id="popup-overlay" class="popup-overlay">
+  <div class="popup-box">
+    <h3>🔔 Get Notified</h3>
+    <label for="popup-name">Full Name</label>
+    <input type="text" id="popup-name" placeholder="Enter your name" />
+    <label for="popup-email">Email Address</label>
+    <input type="email" id="popup-email" placeholder="Enter your email" />
+    <button onclick="submitForm()">Notify Me</button>
+    <button onclick="closePopup()" style="margin-top:10px;background-color:#ccc;color:#333;">Cancel</button>
+  </div>
+</div>
+
 <script>
   window.onscroll = function() {
     const btn = document.getElementById("scrollTopBtn");
@@ -310,5 +295,27 @@
   function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
+  function openPopup() {
+    document.getElementById('popup-overlay').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closePopup() {
+    document.getElementById('popup-overlay').style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  function submitForm() {
+    const name = document.getElementById('popup-name').value;
+    const email = document.getElementById('popup-email').value;
+    if (!name || !email) {
+      alert("Please enter both name and email");
+      return;
+    }
+    alert("Thanks " + name + "! We'll notify you at " + email);
+    closePopup();
+    // כאן תוכל בעתיד לשלוח את הפרטים לשרת שלך
+  }
+</script>
 </body>
 </html>
