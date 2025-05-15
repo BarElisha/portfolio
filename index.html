@@ -76,7 +76,40 @@
   .project a:hover {
     text-decoration: underline;
   }
+  #scrollTopBtn {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    background-color: #00b8a9;
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
+  #scrollTopBtn:hover {
+    background-color: #009e94;
+  }
 </style>
+
+<script>
+  window.onscroll = function() {
+    const btn = document.getElementById("scrollTopBtn");
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+      btn.style.display = "block";
+    } else {
+      btn.style.display = "none";
+    }
+  };
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+
+<button onclick="scrollToTop()" id="scrollTopBtn" style="display:none;">⬆ Back to Top</button>
 
 <body>
   <h1>🤖 Bar Elisha's AI Playground</h1>
