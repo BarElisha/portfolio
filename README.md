@@ -1,34 +1,49 @@
+
 # 🤖 Bar Elisha's AI Portfolio
 
-Welcome to my **AI Playground**, a public portfolio highlighting some of the innovative and technical projects I've built using Python, Flask, AI models, and data visualization tools.
+Welcome to my **AI Playground**, a public portfolio highlighting innovative and technical projects built using Python, Flask, AI-driven logic, and data visualization tools.
 
-This repository powers my GitHub Pages website, where each project is briefly showcased. For select private repositories (such as Ballgorithm and HRise), summary documents are available, and full access can be granted upon request.
+This repository powers my GitHub Pages website and includes both completed projects and concept-stage AI applications.
 
-👉 **Visit the site**:  
+👉 **View the portfolio site**:  
 [https://elihsajr.github.io/portfolio](https://elihsajr.github.io/portfolio)
 
 ---
 
-## 📌 Included Projects
+## ✅ Completed Projects
 
 | Project | Description | Access |
 |--------|-------------|--------|
-| **HRise** | Flask-based HR management backend with file uploads, permissions, and email features | Summary PDF |
-| **Ballgorithm** | Modular MVP for AI-based football video analysis and export tools | Summary PDF |
-| **AI StockBot** | Python bot that fetches real-time stock data and analyzes portfolio performance | Summary PDF |
-| **YouTube Stream Timer** | Custom plugin setup for stream countdowns using OBS + Stream Timer | Coming Soon |
-| **Funny Sausage Dashboard** | Embedded Tableau dashboard with humorous data visuals | [View Live](https://public.tableau.com/app/profile/bar.elisha/viz/_17466313577960/sheet0) |
+| **HRise** | Lightweight Flask-based HR system for managing uploads, permissions, and email flows | [Download Summary](./readmes/hrise-summary.md) |
+| **Ballgorithm** | Football video analysis backend that segments and summarizes tactical plays | [Download Summary](./readmes/ballgorithm-summary.md) |
+| **AI StockBot** | Python bot that tracks monthly portfolio changes and analyzes return rates | [Download Summary](./readmes/ai-stockbot-summary.md) |
+| **Funny Sausage Dashboard** | Data visualization dashboard embedded via Tableau with a humorous twist | [View Live](https://public.tableau.com/app/profile/bar.elisha/vizzes) |
 
 ---
 
-## 📁 Project Summaries
+## 🧪 AI Projects in Progress
 
-All summaries are available as downloadable PDF files in the [`/readmes`](./readmes) folder of this repository.
+### ⚽ Smarter Sports
+- **Auto-Scout Vision** – Visual detection engine for match footage
+- **TacticalGPT** – Language-driven assistant for coaches
+- **ScoutRAG** – Hybrid memory + retrieval for scouting decisions
+- **TeamAgent** – Pattern-based recommender for training optimizations
+
+### 📦 Business Automation
+- **PromoAgent** – Sends discount codes to new loyalty members
+- **OrderFlowBot** – Automates e-commerce confirmations and logistics
+- **ReportGenie** – Weekly performance reports from spreadsheets
+- **ClientTagger** – Auto-labels client leads by behavior and text
+
+---
+
+## 🧰 Core Skills
+
+Python · Flask · SQL · HTML/CSS/JS · Data Analysis · Tableau · Oracle HCM · AI Prompt Engineering · LLM Integration · API Automation · Project Management · User Experience · System Design · Git/GitHub
 
 ---
 
 ## 📫 Contact
 
-For access to private repositories or collaboration opportunities, feel free to reach out via GitHub or LinkedIn.
-
----
+Want access to private repositories or to collaborate on AI-driven systems?  
+Feel free to reach out on [GitHub](https://github.com/ElihsaJR) or LinkedIn.
