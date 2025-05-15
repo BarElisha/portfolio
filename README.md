@@ -1,68 +1,34 @@
-# Ballgorithm - AI Video Analysis System
+# 🤖 Bar Elisha's AI Portfolio
 
-Ballgorithm is an AI-powered backend system that processes football match videos, segments them into short clips, summarizes each segment using OpenAI's GPT-4, analyzes the summaries for tactical insights, and produces structured outputs like PDF and PPTX files.
+Welcome to my **AI Playground**, a public portfolio highlighting some of the innovative and technical projects I've built using Python, Flask, AI models, and data visualization tools.
 
-## 🧠 Features
-- Segment video files into 10-second chunks
-- Generate textual summaries using LLM (GPT-4)
-- Analyze summaries for tactical patterns and confidence scores
-- Fetch external data (e.g., team info) via a configurable API gateway
-- Export insights as PDF or PowerPoint slides
-- Docker-ready deployment
+This repository powers my GitHub Pages website, where each project is briefly showcased. For select private repositories (such as Ballgorithm and HRise), summary documents are available, and full access can be granted upon request.
 
-## 📁 Project Structure
-```
-app/
-├── ai/
-│   ├── video_segmenter.py
-│   ├── segment_summarizer.py
-│   ├── text_analyzer.py
-│   └── render_outputs.py
-├── gateway/
-│   └── gateway_connector.py
-├── models.py
-├── config.py
-├── jwt_utils.py
-...
-```
+👉 **Visit the site**:  
+[https://elihsajr.github.io/portfolio](https://elihsajr.github.io/portfolio)
 
-## ⚙️ Setup
+---
 
-### Prerequisites
-- Python 3.10+
-- PostgreSQL
-- Docker (optional but recommended)
-- OpenAI API Key (save in `.env` as `OPENAI_API_KEY`)
+## 📌 Included Projects
 
-### Installation
+| Project | Description | Access |
+|--------|-------------|--------|
+| **HRise** | Flask-based HR management backend with file uploads, permissions, and email features | Summary PDF |
+| **Ballgorithm** | Modular MVP for AI-based football video analysis and export tools | Summary PDF |
+| **AI StockBot** | Python bot that fetches real-time stock data and analyzes portfolio performance | Summary PDF |
+| **YouTube Stream Timer** | Custom plugin setup for stream countdowns using OBS + Stream Timer | Coming Soon |
+| **Funny Sausage Dashboard** | Embedded Tableau dashboard with humorous data visuals | [View Live](https://public.tableau.com/app/profile/bar.elisha/viz/_17466313577960/sheet0) |
 
-```bash
-pip install -r requirements.txt
-cp .env.template .env
-flask db upgrade
-flask run
-```
+---
 
-### With Docker
-```bash
-docker-compose up --build
-```
+## 📁 Project Summaries
 
-## 🧪 Running Tests
-```bash
-python tests/test_endpoints.py
-```
+All summaries are available as downloadable PDF files in the [`/readmes`](./readmes) folder of this repository.
 
-## 📦 Outputs
-- JSON (insights + probabilities)
-- PDF reports
-- PPTX slide decks
+---
 
-## 🔒 Security
-- JWT-based auth
-- SQLAlchemy ORM (no raw SQL)
-- File validation for uploads
-- Placeholder-based queries to prevent SQL injection
+## 📫 Contact
 
-## 🧰 Authors
-Built by Bar Elisha and OpenAI Backend AI Assistant.
+For access to private repositories or collaboration opportunities, feel free to reach out via GitHub or LinkedIn.
+
+---
