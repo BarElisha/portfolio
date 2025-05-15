@@ -1,111 +1,94 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>🤖 Bar Elisha's AI Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Roboto', sans-serif;
-      background-color: #ffffff;
-      color: #1a1a1a;
-      margin: 0;
-      padding: 2em;
-      box-sizing: border-box;
-    }
-    h1 {
-      color: #00b8a9;
-      font-size: 3em;
-      text-align: center;
-    }
-    h2 {
-      text-align: center;
-      font-size: 2.5em;
-      color: #00b8a9;
-      margin-top: 4em;
-    }
-    h3 {
-      text-align: center;
-      font-size: 1.6em;
-      color: #ff8800;
-    }
-    p.description {
-      text-align: center;
-      font-size: 1.2em;
-      margin-bottom: 3em;
-      color: #555;
-    }
-    .project-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2em;
-    }
-    .project {
-      background-color: #f2f2f2;
-      border: 1px solid #ddd;
-      border-left: 4px solid #00b8a9;
-      padding: 1.5em;
-      width: 300px;
-      border-radius: 10px;
-      transition: transform 0.2s ease;
-    }
-    .project:hover {
-      transform: scale(1.03);
-    }
-    .project h2 {
-      margin-top: 0;
-      color: #ff8800;
-      font-size: 1.4em;
-    }
-    .project p {
-      font-size: 0.95em;
-    }
-    .project a {
-      color: #0077cc;
-      text-decoration: none;
-      display: inline-block;
-      margin-top: 0.5em;
-    }
-    .project a:hover {
-      text-decoration: underline;
-    }
-  </style>
-</head>
+<style>
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #ffffff;
+    color: #1a1a1a;
+    margin: 0;
+    padding: 2em;
+    box-sizing: border-box;
+  }
+  h1 {
+    color: #00b8a9;
+    font-size: 3em;
+    text-align: center;
+  }
+  h2 {
+    text-align: center;
+    font-size: 2.5em;
+    color: #00b8a9;
+    margin-top: 4em;
+  }
+  h3 {
+    text-align: center;
+    font-size: 1.6em;
+    color: #ff8800;
+  }
+  p.description {
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 3em;
+    color: #555;
+  }
+  .coming-soon-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 4em;
+    margin-top: 3em;
+  }
+  .category-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2em;
+    justify-items: center;
+    max-width: 640px;
+  }
+  .project {
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+    border-left: 4px solid #00b8a9;
+    padding: 1.5em;
+    width: 280px;
+    border-radius: 10px;
+    transition: transform 0.2s ease;
+  }
+  .project:hover {
+    transform: scale(1.03);
+  }
+  .project h2 {
+    margin-top: 0;
+    color: #ff8800;
+    font-size: 1.4em;
+  }
+  .project p {
+    font-size: 0.95em;
+  }
+  .project a {
+    color: #0077cc;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 0.5em;
+  }
+  .project a:hover {
+    text-decoration: underline;
+  }
+</style>
+
 <body>
   <h1>🤖 Bar Elisha's AI Playground</h1>
   <p class="description">Exploring the future of technology through code, data, and smart robots 🤖🚀</p>
 
-  <div class="project-grid">
-    <div class="project">
-      <h2>📄 HRise – HR Management System</h2>
-      <p>A complete Flask-based system for managing employees, forms, and file uploads.</p>
-      <a href="readmes/hrise-summary.md" download>📥 Download Summary</a>
-    </div>
-    <div class="project">
-      <h2>🎥 Ballgorithm – Football Video Analysis</h2>
-      <p>Modular MVP for processing football videos and generating reports using AI logic.</p>
-      <a href="readmes/Ballgorithm README.md" download>📥 Download Summary</a>
-    </div>
-    <div class="project">
-      <h2>📊 AI StockBot</h2>
-      <p>A Python script that connects to stock APIs and analyzes portfolios in real time.</p>
-      <a href="readmes/ai-stockbot-summary.md" download>📥 Download Summary</a>
-    </div>
-    <div class="project">
-      <h2>🚀 Funny Sausage Dashboard</h2>
-      <p>Data visualization dashboard embedded from Tableau with playful visual themes.</p>
-      <a href="https://public.tableau.com/app/profile/bar.elisha/vizzes" target="_blank">View All Dashboards</a>
-    </div>
-  </div>
+  <!-- Existing project grid here -->
 
   <h2>🔮 What’s Brewing: AI Projects in Progress</h2>
-
-  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 4em;">
-    <div>
+  <div class="coming-soon-wrapper">
+    <div class="category-block">
       <h3>⚽ Smarter Sports</h3>
-      <div class="project-grid" style="max-width: 640px;">
+      <div class="project-grid">
         <div class="project">
           <h2>📸 Auto-Scout Vision</h2>
           <p>Transforms raw match footage into structured awareness by detecting key player movements and visual anomalies in real time.</p>
@@ -129,9 +112,9 @@
       </div>
     </div>
 
-    <div>
+    <div class="category-block">
       <h3>📦 Business Automation</h3>
-      <div class="project-grid" style="max-width: 640px;">
+      <div class="project-grid">
         <div class="project">
           <h2>🎁 PromoAgent</h2>
           <p>Automatically sends discount codes to new members of loyalty clubs via email or SMS with CRM integration.</p>
@@ -161,4 +144,3 @@
     Python · Flask · SQL · HTML/CSS/JS · Data Analysis · Tableau · Oracle HCM · AI Prompt Engineering · LLM Integration · API Automation · Project Management · User Experience · System Design · Git/GitHub
   </p>
 </body>
-</html>
