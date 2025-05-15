@@ -306,15 +306,31 @@
   }
 
   function submitForm() {
-    const name = document.getElementById('popup-name').value;
-    const email = document.getElementById('popup-email').value;
+    const name = document.getElementById('popup-name').value.trim();
+    const email = document.getElementById('popup-email').value.trim();
+
     if (!name || !email) {
       alert("Please enter both name and email");
       return;
     }
-    alert("Thanks " + name + "! We'll notify you at " + email);
-    closePopup();
-    // כאן תוכל בעתיד לשלוח את הפרטים לשרת שלך
+
+    fetch("https://script.google.com/macros/s/AKfycbzwv523YxueFF0Hs0BM4zOBJtmhogbRsIBw3lDqUu-z2-OZxXDFRo_HEkdBdbRWjtXuGQ/exec", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name: name, email: email })
+    })
+    .then(response => {
+      if (response.ok) {
+        alert("Thanks " + name + "! We'll notify you at " + email);
+        closePopup();
+      } else {
+        alert("Something went wrong while saving your details.");
+      }
+    })
+    .catch(error => {
+      console.error("Error submitting form:", error);
+      alert("Something went wrong. Please try again later.");
+    });
   }
 </script>
 </body>
