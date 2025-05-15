@@ -1,99 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>🤖 Bar Elisha's AI Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #0f0f0f;
-            color: #e0e0e0;
-            padding: 40px;
-            margin: 0;
-        }
-        h1 {
-            color: #00ffe7;
-            font-size: 3em;
-            margin-bottom: 0.2em;
-            text-align: center;
-        }
-        p.intro {
-            text-align: center;
-            color: #bbbbbb;
-            font-size: 1.2em;
-            margin-bottom: 3em;
-        }
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            padding: 0 10px;
-        }
-        .project {
-            background-color: #1c1c1c;
-            border: 1px solid #333;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 0 8px rgba(0, 255, 255, 0.15);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .project:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
-        }
-        h2 {
-            color: #ffcc00;
-            margin-top: 0;
-        }
-        a {
-            color: #00ccff;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .emoji {
-            font-size: 1.3em;
-            margin-right: 6px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🤖 Bar Elisha's AI Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #0f0f0f;
+      color: #e0e0e0;
+      margin: 0;
+      padding: 2em;
+      box-sizing: border-box;
+    }
+    h1 {
+      color: #00ffcc;
+      font-size: 3em;
+      text-align: center;
+    }
+    p.description {
+      text-align: center;
+      font-size: 1.2em;
+      margin-bottom: 3em;
+      color: #ccc;
+    }
+    .project-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2em;
+    }
+    .project {
+      background-color: #1a1a1a;
+      border: 1px solid #333;
+      border-left: 4px solid #00ffcc;
+      padding: 1.5em;
+      width: 300px;
+      border-radius: 10px;
+      transition: transform 0.2s ease;
+    }
+    .project:hover {
+      transform: scale(1.03);
+    }
+    .project h2 {
+      margin-top: 0;
+      color: #ffcc00;
+      font-size: 1.4em;
+    }
+    .project p {
+      font-size: 0.95em;
+    }
+    .project a {
+      color: #00ccff;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 0.5em;
+    }
+    .project a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-    <h1>🤖 Bar Elisha's AI Playground</h1>
-    <p class="intro">Exploring the future of technology through code, data, and smart robots 🤖🚀</p>
+  <h1>🤖 Bar Elisha's AI Playground</h1>
+  <p class="description">Exploring the future of technology through code, data, and smart robots 🤖🚀</p>
 
-    <div class="projects">
-        <div class="project">
-            <h2>📄 HRise – HR Management System</h2>
-            <p>Full Flask-based system for managing files, forms, permissions, and automated emails with static UI.</p>
-            <p><a href="https://github.com/YourUsername/hrise" target="_blank">View Full Project on GitHub</a></p>
-        </div>
-
-        <div class="project">
-            <h2>📹 Ballgorithm – Football Video Analysis</h2>
-            <p>Modular MVP system for segmenting, analyzing, and producing AI-generated summaries for football matches.</p>
-            <p><a href="https://github.com/YourUsername/ballgorithm" target="_blank">Browse Source Code</a></p>
-        </div>
-
-        <div class="project">
-            <h2>🕰️ Live YouTube Timer</h2>
-            <p>Integrated custom timer using OBS + Stream Timer Plugin for live streaming countdowns.</p>
-            <p><a href="#">Preview and screenshots coming soon</a></p>
-        </div>
-
-        <div class="project">
-            <h2>📊 AI StockBot</h2>
-            <p>Python-based bot that connects to market APIs to analyze trends and generate investment insights.</p>
-            <p><a href="https://github.com/YourUsername/ai-stockbot" target="_blank">Explore the Bot on GitHub</a></p>
-        </div>
-
-        <div class="project">
-            <h2>🚀 Funny Sausage Dashboard</h2>
-            <p>Tableau-based humorous data visualization dashboard embedded inside an HTML interface.</p>
-            <p><a href="https://public.tableau.com/app/profile/bar.elisha/viz/_17466313577960/sheet0" target="_blank">Open Dashboard</a></p>
-        </div>
+  <div class="project-grid">
+    <div class="project">
+      <h2>📄 HRise – HR Management System</h2>
+      <p>A complete Flask-based system for managing employees, forms, and file uploads.</p>
+      <a href="https://github.com/YourUsername/hrise" target="_blank">View on GitHub</a>
     </div>
+
+    <div class="project">
+      <h2>🎥 Ballgorithm – Football Video Analysis</h2>
+      <p>Modular MVP for processing football videos and generating reports using AI logic.</p>
+      <a href="https://github.com/YourUsername/ballgorithm" target="_blank">Repository & Docs</a>
+    </div>
+
+    <div class="project">
+      <h2>⏰ YouTube Stream Timer</h2>
+      <p>OBS plugin-based solution for displaying countdown timers in live broadcasts.</p>
+      <a href="#">Coming Soon: Documentation & Demo</a>
+    </div>
+
+    <div class="project">
+      <h2>📊 AI StockBot</h2>
+      <p>A Python script that connects to stock APIs and analyzes portfolios in real time.</p>
+      <a href="https://github.com/YourUsername/ai-stockbot" target="_blank">Open Project</a>
+    </div>
+
+    <div class="project">
+      <h2>🚀 Funny Sausage Dashboard</h2>
+      <p>Data visualization dashboard embedded from Tableau with playful visual themes.</p>
+      <a href="https://public.tableau.com/app/profile/bar.elisha/viz/_17466313577960/sheet0" target="_blank">View Dashboard</a>
+    </div>
+  </div>
 </body>
 </html>
