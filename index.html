@@ -389,17 +389,13 @@ function submitForm() {
   const main = document.getElementById('main-content');
   const skipBtn = document.getElementById('skip-btn');
 
-  // כשהוידאו נגמר
   video.onended = function () {
+    video.muted = true;
     welcome.style.display = 'none';
     main.style.display = 'block';
   };
-
-  // אם המשתמש לוחץ על Skip
-  skipBtn.onclick = function () {
-  video.muted = true;
-  video.currentTime = 0;
-  video.play().catch(err => console.error('Playback failed:', err));
+skipBtn.onclick = function () {
+  video.pause();
   welcome.style.display = 'none';
   main.style.display = 'block';
 };
