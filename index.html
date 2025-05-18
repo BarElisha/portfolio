@@ -124,7 +124,7 @@
     .project a:hover, .project button:hover {
       opacity: 0.9;
     }
-  #scrollTopBtn {
+      #scrollTopBtn {
     position: fixed;
     bottom: 100px;
     left: 40px;
@@ -141,28 +141,9 @@
     transition: background-color 0.3s ease;
   }
   #scrollTopBtn:hover {
-    background-color: #009e94;
+    background-color: #334155;
+    color: rgb(255, 255, 255);
   }
-.popup-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: rgba(0, 0, 0, 0.5);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-    }
-    .popup-box {
-      background: #fff;
-      padding: 2em;
-      border-radius: 10px;
-      width: 90%;
-      max-width: 400px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-    }
     .popup-box h3 {
       margin-top: 0;
       color: #00b8a9;
@@ -243,24 +224,50 @@
       from {opacity: 0}
       to {opacity: 1}
     }
+/* רקע כהה של הפופ-אפ */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.form-popup-box {
+  background: white;
+  border-radius: 10px;
+  width: 95%;
+  max-width: 800px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  padding-top: 0;
+}
+
 .close-form-btn {
   position: absolute;
   top: 10px;
   right: 10px;
-  background-color: black;
-  color: #444;
+  background: none;
+  color: #333;
   border: none;
-  font-size: 1.5em;
+  font-size: 24px;
   font-weight: bold;
+  line-height: 1;
   cursor: pointer;
-  z-index: 10;
-  transition: color 0.3s ease, transform 0.2s ease;
+  z-index: 10000;
+  transition: color 0.2s ease, transform 0.2s ease;
 }
-
 .close-form-btn:hover {
   color: #e11d48;
   transform: scale(1.2);
 }
+
   </style>
 </head>
 <body>
@@ -342,44 +349,31 @@
 <img alt="LinkedIn" height="40" src="https://cdn-icons-png.flaticon.com/512/174/174857.png" style="border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.2);" width="40"/>
 </a>
 </div>
-<div id="form-popup" class="popup-overlay">
-  <div class="popup-box" style="width: 95%; max-width: 800px; padding: 0; position: relative;">
-    <button onclick="closeFormPopup()" class="close-form-btn">×</button>
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScV1OJ5AzOZZfQvdhokiBiGqbpymVlfrYe0SGSHlqV6NtiHTg/viewform?embedded=true"
-      width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0"
-      style="border-radius: 0 0 10px 10px;">
-      טוען טופס…
-    </iframe>
-  </div>
-</div>
 <footer>
     <h3>🧰 Core Skills</h3>
       <p class="description" style="max-width: 900px; margin: auto;">
     Python · Flask · SQL · HTML/CSS/JS · Excel · Tableau · Oracle HCM · AI Prompt Engineering · LLM Integration · API Automation · Project Management · UX/UI · System Design
       </p>
 </footer>
-<div id="popup-overlay" class="popup-overlay">
-  <div class="popup-box">
-    <h3>🔔 Get Notified</h3>
-    <label for="popup-name">Full Name</label>
-    <input type="text" id="popup-name" placeholder="Enter your name" />
-    <label for="popup-email">Email Address</label>
-    <input type="email" id="popup-email" placeholder="Enter your email" />
-    <button onclick="submitForm()">Notify Me</button>
-    <button onclick="closePopup()" style="margin-top:10px;background-color:#ccc;color:#333;">Cancel</button>
+<button id="scrollTopBtn" onclick="scrollToTop()" style="display:none;">⬆ Back to Top</button>
+<!-- Google Form Popup -->
+<div id="form-popup" class="popup-overlay">
+  <div class="form-popup-box">
+    <button onclick="closeFormPopup()" class="close-form-btn">×</button>
+    <iframe
+      src="https://docs.google.com/forms/d/e/1FAIpQLScV1OJ5AzOZZfQvdhokiBiGqbpymVlfrYe0SGSHlqV6NtiHTg/viewform?embedded=true"
+      width="100%"
+      height="600"
+      frameborder="0"
+      marginheight="0"
+      marginwidth="0"
+      style="border-radius: 0 0 10px 10px; border: none;">
+      טוען טופס…
+    </iframe>
   </div>
 </div>
-</div>
-<button id="scrollTopBtn" onclick="scrollToTop()" style="display:none;">⬆ Back to Top</button>
+
 <script>
-  window.onscroll = function() {
-    const btn = document.getElementById("scrollTopBtn");
-    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-      btn.style.display = "block";
-    } else {
-      btn.style.display = "none";
-    }
-  };
   function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
@@ -394,42 +388,6 @@
   function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
-function submitForm() {
-  const name = document.getElementById('popup-name').value;
-  const email = document.getElementById('popup-email').value;
-
-  if (!name || !email) {
-    alert("Please enter both name and email");
-    return;
-  }
-
-  const formData = new URLSearchParams();
-  formData.append("name", name);
-  formData.append("email", email);
-
-  fetch("https://script.google.com/macros/s/AKfycbzwv523YxueFF0Hs0BM4zOBJtmhogbRsIBw3lDqUu-z2-OZxXDFRo_HEkdBdbRWjtXuGQ/exec", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/x-www-form-urlencoded"
-    },
-    body: formData.toString()
-  })
-  .then(response => response.text())
-  .then(result => {
-    if (result === "success") {
-      alert("Thanks " + name + "! We'll notify you at " + email);
-      closePopup();
-    } else {
-      alert("Something went wrong. Try again.");
-    }
-  })
-  .catch(error => {
-    console.error(error);
-    alert("Error submitting form. Please try again later.");
-  });
-}
-
-// ✨ עכשיו הוסף כאן את הפונקציות שנטענות מראש
 function openFormPopup() {
   document.getElementById('form-popup').style.display = 'flex';
   document.body.style.overflow = 'hidden';
@@ -439,7 +397,6 @@ function closeFormPopup() {
   document.getElementById('form-popup').style.display = 'none';
   document.body.style.overflow = '';
 }
-
 </script>
   <script>
     const video = document.getElementById('welcome-video');
