@@ -316,6 +316,7 @@
   </div>
 </div>
 </div>
+<button id="scrollTopBtn" onclick="scrollToTop()" style="display:none;">⬆ Back to Top</button>
 <script>
   window.onscroll = function() {
     const btn = document.getElementById("scrollTopBtn");
@@ -328,10 +329,6 @@
   function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
-</script>
-<!-- Scroll to Top Button -->
-<button id="scrollTopBtn" onclick="scrollToTop()" style="display:none;">⬆ Back to Top</button>
-<script>
   window.onscroll = function() {
     const btn = document.getElementById("scrollTopBtn");
     if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
@@ -398,14 +395,12 @@ function submitForm() {
   };
 
   // אם המשתמש לוחץ על Skip
-skipBtn.onclick = function () {
-  video.muted = false;
+  skipBtn.onclick = function () {
   video.currentTime = 0;
   video.play().catch(err => console.error('Playback failed:', err));
   welcome.style.display = 'none';
   main.style.display = 'block';
 };
-
 </script>
 </body>
 </html>
