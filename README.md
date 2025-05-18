@@ -3,8 +3,10 @@
 
 Welcome to my **AI Playground**, a public portfolio highlighting innovative and technical projects built using AI-driven tools and logic.
 
-👉 **View the portfolio site**:  
-https://barelisha.github.io/portfolio/
+👉 **[Click Here](./https://barelisha.github.io/portfolio/) and check the portfolio site**:  
+
+
+
 ---
 
 ## ✅ Completed Projects
