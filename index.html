@@ -392,6 +392,7 @@ function submitForm() {
 
   // אם המשתמש לוחץ על Skip
   skipBtn.onclick = function () {
+  video.muted = false;
   video.pause();
   welcome.style.display = 'none';
   main.style.display = 'block';
