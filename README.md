@@ -15,7 +15,7 @@ Welcome to my **AI Playground**, a public portfolio highlighting innovative and 
 | **HRise** | Lightweight Flask-based HR system for managing uploads, permissions, and email flows | [Download Summary](./readmes/hrise-summary.md) |
 | **Ballgorithm** | Football video analysis backend that segments and summarizes tactical plays | [Download Summary](./readmes/ballgorithm-summary.md) |
 | **AI StockBot** | Python bot that tracks monthly portfolio changes and analyzes return rates | [Download Summary](./readmes/ai-stockbot-summary.md) |
-| **Funny Sausage Dashboard** | Data visualization dashboard embedded via Tableau with a humorous twist | [View Live](https://public.tableau.com/app/profile/bar.elisha/vizzes) |
+| **Funny Dashboards** | Data visualization dashboard embedded via Tableau with a humorous twist | [View Live](https://public.tableau.com/app/profile/bar.elisha/vizzes) |
 
 ---
 
