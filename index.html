@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -74,21 +73,22 @@
       background-color: #3b82f6;
     }
     .btn-notify {
-      width: 100%;
-      display: inline-block;
-      background-color: #f59e0b;
-      color: white;
-      font-weight: bold;
-      padding: 10px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 1em;
-      transition: background-color 0.3s ease;
+    width: 100%;
+    display: inline-block;
+    background-color: #f59e0b; /* orange */
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
     }
     .btn-notify:hover {
-      background-color: #d97706;
+    background-color: #d97706;
     }
+
     .project a, .project button {
       display: inline-block;
       margin-top: 1em;
@@ -107,41 +107,102 @@
     .project a:hover, .project button:hover {
       opacity: 0.9;
     }
-    #welcome-screen {
+  </style>
+    <style>
+  #scrollTopBtn {
+    position: fixed;
+    bottom: 100px;
+    left: 40px;
+    background-color: #00b8a9;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+  }
+  #scrollTopBtn:hover {
+    background-color: #009e94;
+  }
+.popup-overlay {
       position: fixed;
-      z-index: 9999;
-      top: 0; left: 0;
+      top: 0;
+      left: 0;
       width: 100vw;
       height: 100vh;
-      background-color: black;
+      background: rgba(0, 0, 0, 0.5);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
     }
-    #skip-button {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background: #00ffc3;
-      color: #000;
-      border: none;
-      padding: 10px 20px;
-      font-size: 1em;
+    .popup-box {
+      background: #fff;
+      padding: 2em;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    }
+    .popup-box h3 {
+      margin-top: 0;
+      color: #00b8a9;
+      text-align: center;
+    }
+    .popup-box label {
+      display: block;
+      margin-top: 1em;
       font-weight: bold;
-      border-radius: 6px;
-      cursor: pointer;
-      z-index: 10000;
     }
+    .popup-box input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 4px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .popup-box button {
+      margin-top: 1.5em;
+      width: 100%;
+      padding: 10px;
+      background-color: #00b8a9;
+      border: none;
+      color: white;
+      font-size: 1em;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .popup-box button:hover {
+      background-color: #009e94;
+    }
+.download-project h2 {
+  color: #10b981;
+}
+.dashboard-project h2 {
+  color: #3b82f6;
+}
+.notify-project h2 {
+  color: #f59e0b;
+}
+
   </style>
 </head>
 <body>
-  <div id="welcome-screen">
-    <video id="welcome-video" width="100%" height="100%" autoplay playsinline>
-      <source src="welcome.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-    <button id="skip-button" onclick="endWelcome()">Skip</button>
-  </div>
-  <div id="main-content" style="display: none;">
-    <h1>Bar Elisha's AI Playground</h1>
-    <p class="description">Exploring the future of technology through code, data, and smart robots 🤖🚀</p>
+  <!-- Welcome Video Screen -->
+<div id="welcome-screen" style="position: fixed; z-index: 9999; top: 0; left: 0; width: 100vw; height: 100vh; background-color: black;">
+  <video id="welcome-video" width="100%" height="100%" autoplay playsinline>
+    <source src="welcome.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <button id="skip-btn" style="position: absolute; top: 20px; right: 30px; padding: 10px 20px; background: #00ffc3; color: black; font-weight: bold; border: none; border-radius: 8px; cursor: pointer; font-size: 1em;">
+    Skip
+  </button>
+</div>
+<div id="main-content" style="display: none;">
   <h1>Bar Elisha's AI Playground</h1>
   <p class="description">Exploring the future of technology through code, data, and smart robots 🤖🚀</p>
 
@@ -226,6 +287,8 @@
     <button onclick="submitForm()">Notify Me</button>
     <button onclick="closePopup()" style="margin-top:10px;background-color:#ccc;color:#333;">Cancel</button>
   </div>
+</div>
+</div>
 <script>
   window.onscroll = function() {
     const btn = document.getElementById("scrollTopBtn");
@@ -296,20 +359,23 @@ function submitForm() {
     alert("Error submitting form. Please try again later.");
   });
 }
+  const video = document.getElementById('welcome-video');
+  const welcome = document.getElementById('welcome-screen');
+  const main = document.getElementById('main-content');
+  const skipBtn = document.getElementById('skip-btn');
+
+  // כשהוידאו נגמר
+  video.onended = function () {
+    welcome.style.display = 'none';
+    main.style.display = 'block';
+  };
+
+  // אם המשתמש לוחץ על Skip
+  skipBtn.onclick = function () {
+    video.pause();
+    welcome.style.display = 'none';
+    main.style.display = 'block';
+  };
 </script>
-  <script>
-    const video = document.getElementById('welcome-video');
-    const welcome = document.getElementById('welcome-screen');
-    const main = document.getElementById('main-content');
-
-    video.onended = function () {
-      endWelcome();
-    };
-
-    function endWelcome() {
-      welcome.style.display = 'none';
-      main.style.display = 'block';
-    }
-  </script>
 </body>
 </html>
