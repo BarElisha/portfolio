@@ -1,9 +1,7 @@
 
 # 🤖 Bar Elisha's AI Portfolio
 
-Welcome to my **AI Playground**, a public portfolio highlighting innovative and technical projects built using Python, Flask, AI-driven logic, and data visualization tools.
-
-This repository powers my GitHub Pages website and includes both completed projects and concept-stage AI applications.
+Welcome to my **AI Playground**, a public portfolio highlighting innovative and technical projects built using AI-driven tools and logic.
 
 👉 **View the portfolio site**:  
 [https://elihsajr.github.io/portfolio](https://elihsajr.github.io/portfolio)
@@ -39,7 +37,7 @@ This repository powers my GitHub Pages website and includes both completed proje
 
 ## 🧰 Core Skills
 
-Python · Flask · SQL · HTML/CSS/JS · Data Analysis · Tableau · Oracle HCM · AI Prompt Engineering · LLM Integration · API Automation · Project Management · User Experience · System Design · Git/GitHub
+Python · Flask · SQL · HTML/CSS/JS · Excel · Tableau · Oracle HCM · AI Prompt Engineering · LLM Integration · API Automation · Project Management · UX/UI · System Design
 
 ---
 
