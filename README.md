@@ -4,7 +4,7 @@
 Welcome to my **AI Playground**, a public portfolio highlighting innovative and technical projects built using AI-driven tools and logic.
 
 👉 **View the portfolio site**:  
-[https://elihsajr.github.io/portfolio](https://elihsajr.github.io/portfolio)
+[[https://elihsajr.github.io/portfolio](https://elihsajr.github.io/portfolio](https://barelisha.github.io/portfolio/))
 
 ---
 
